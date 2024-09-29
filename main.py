@@ -17,21 +17,26 @@ EXCLUDE_SUBJECTS = [
 def main():
     # Шаг 1: Получение расписания
     print("Получение расписания...")
-    response = requests.get(SCHEDULE_URL)
+    url = "https://timetable.spbu.ru/AMCP/StudentGroupEvents/Primary/394787/"  # Пример URL
+    response = requests.get(url)
 
-    # Проверка статуса ответа
-    if response.status_code != 200:
-        print("Ошибка при загрузке расписания:", response.status_code)
-        return
-
-    # Передача HTML-контента в функцию парсинга
-    lessons = parse_schedule(response.text)
-    print(f"Найдено {len(lessons)} занятий.")
+    lessons = None  # Инициализируем переменную
+    if response.status_code == 200:
+        # Парсим HTML-контент напрямую
+        lessons = parse_schedule(response.text)
+        print(f"Найдено {len(lessons)} занятий.")
+    else:
+        print(f"Ошибка при получении данных: {response.status_code}")
+        return  # Выходим из программы, если данные не удалось получить
 
     # Шаг 2: Фильтрация занятий
-    print("Фильтрация ненужных предметов...")
-    filtered_lessons = filter_lessons(lessons, EXCLUDE_SUBJECTS)
-    print(f"После фильтрации осталось {len(filtered_lessons)} занятий.")
+    if lessons:
+        print("Фильтрация ненужных предметов...")
+        filtered_lessons = filter_lessons(lessons, EXCLUDE_SUBJECTS)
+        print(f"После фильтрации осталось {len(filtered_lessons)} занятий.")
+    else:
+        print("Нет занятий для фильтрации.")
+        return  # Выходим, если занятий нет
 
     # Шаг 3: Авторизация Google Calendar
     print("Авторизация в Google Calendar...")
