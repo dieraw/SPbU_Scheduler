@@ -6,8 +6,8 @@ def create_google_calendar_event(service, lesson):
     start_time = datetime.strptime(lesson['time'].split('–')[0].strip(), "%H:%M")
     end_time = datetime.strptime(lesson['time'].split('–')[1].strip(), "%H:%M")
 
-    # Дата события
-    event_date = "2024-09-29"  # Это можно извлечь из lesson или передавать как параметр
+    # Получаем дату события из lesson
+    event_date = lesson['date'].strftime('%Y-%m-%d')  # Форматируем дату в строку
     start = f"{event_date}T{start_time.strftime('%H:%M:%S')}"  # Правильный формат времени
     end = f"{event_date}T{end_time.strftime('%H:%M:%S')}"
 
