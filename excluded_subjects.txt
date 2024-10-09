@@ -1,0 +1,24 @@
+Facultative. Control Methods in Socio-Economic Systems, seminar
+Big data in economics, seminar
+Fundamentals of Discrete Dynamical System Theory, seminar
+Mathematical Control Models, seminar
+Mathematical Programming, seminar
+Theory of Algorithms, seminar
+Conflict and Cooperation, seminar
+Economic Decision Theory, seminar
+Introduction to Computer Technologies of Control Processes, seminar
+Machine Learning Algorithms, lecture
+Neural Network Technologies, seminar
+Practical Training (Research Work), supervised self-study
+Probability Theory and Mathematical Statistics, practical class
+Probability Theory and Mathematical Statistics, lecture
+Numerical Methods, practical class
+Numerical Methods, lecture
+Control Theory, lecture
+Electrodynamics and Quantum Mechanics, lecture
+Electrodynamics and Quantum Mechanics, practical class
+Game Theory and Operations Research, practical class
+Control Theory, practical class
+Game Theory and Operations Research, lecture
+Equations of Mathematical Physics, practical class
+Equations of Mathematical Physics, lecture
