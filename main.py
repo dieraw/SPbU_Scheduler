@@ -19,6 +19,8 @@ def main():
     print("Получение расписания...")
     url = "https://timetable.spbu.ru/AMCP/StudentGroupEvents/Primary/394787/"  # Пример URL
     response = requests.get(url)
+    print(f"Статус запроса: {response.status_code}")
+    print(f"Часть HTML: {response.text[:500]}")  # выводим первые 500 символов
 
     lessons = None  # Инициализируем переменную
     if response.status_code == 200:
