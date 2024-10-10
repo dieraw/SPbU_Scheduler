@@ -5,7 +5,6 @@ import pytz
 COLOR_MAP = {
     'Algorithmic methods of graph theory': '1',  # Red
     'Client Technologies for Web Application Development': '2',  # Orange
-    # Добавьте другие предметы и соответствующие им colorId
     'Default Subject': '3'  # Yellow
 }
 
@@ -28,7 +27,7 @@ def create_google_calendar_event(service, lesson):
     end = end_time.isoformat()
 
     # Получаем colorId из COLOR_MAP по названию предмета, или используем значение по умолчанию
-    color_id = COLOR_MAP.get(lesson['subject'], '3')  # Используем '3' как цвет по умолчанию
+    color_id = COLOR_MAP.get(lesson['subject'], '8')  # Используем '3' как цвет по умолчанию
 
     # Создаем событие
     event = {
@@ -54,8 +53,3 @@ def create_google_calendar_event(service, lesson):
         print(f"Время окончания: {end}")
     except Exception as e:
         print(f"Ошибка при создании события: {e}")
-
-# Пример использования:
-# filtered_lessons = [{"subject": "Algorithmic methods of graph theory", ...}]
-# for lesson in filtered_lessons:
-#     create_google_calendar_event(service, lesson)
